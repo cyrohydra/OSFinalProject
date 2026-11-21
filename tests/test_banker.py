@@ -4,7 +4,7 @@ from oslab.banker.banker import is_safe, request_resources
 
 with open("data/banker/safe_request.json") as data_files: 
     TEXTBOOK_STATE = json.load(data_files)
-    AVALABLE = TEXTBOOK_STATE["available"]
+    AVAILABLE = TEXTBOOK_STATE["available"]
     ALLOCATION = TEXTBOOK_STATE["allocation"]
     MAXIMUM_DEMAND = TEXTBOOK_STATE["max"]
 
