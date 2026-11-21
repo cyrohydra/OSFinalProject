@@ -7,16 +7,14 @@ Terms used below:
   remaining_need        maximum_demand - allocation (what a process may still request)
 """
 
-
-def need_matrix(maximum, allocation):
+def need_matrix(maximum_demand, allocation):
   """remaining_need[p][r] = maximum_demand[p][r] - allocation[p][r]"""
   return [
         [max_units - held_units for max_units, held_units in zip(max_row, allocation_row)]
         for max_row, allocation_row in zip(maximum_demand, allocation)
     ]
 
-def is_safe(available, allocation, maximum_demand):
-    
+def is_safe(available_resources, allocation, maximum_demand):
     """Check whether every process can finish in some order.
 
         loop through all processes, checking if they can finish with the current work vector.
